@@ -7,7 +7,7 @@ const LogoutButton = () => {
   }
   return (
     <button
-      className="p-2 rounded-[10px] bg-red-500 text-black "
+      className="p-2 text-red-600 bg-black text-[12px] rounded-[5px] text-black "
       onClick={handleLogout}
     >
       LogOut
