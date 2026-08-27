@@ -1,21 +1,11 @@
 import { GoogleLogin } from "@react-oauth/google";
-import axios from "axios";
+
+import { userLogin } from "../reduxState/authThunkFun/userLogin";
 
 const Login = () => {
-  async function handleLogin(credential) {
-    try {
-      const response = await axios.post("http://localhost:3000/login", {
-        token: credential.credential,
-      });
-      const result = response.data.message;
-      console.log(result);
-    } catch (error) {
-      console.log(error);
-    }
-  }
   return (
     <GoogleLogin
-      onSuccess={handleLogin}
+      onSuccess={userLogin}
       onError={() => {
         console.log("google login failed");
       }}
