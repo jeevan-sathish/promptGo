@@ -5,6 +5,7 @@ import About from "./pages/About";
 import Playground from "./pages/Playground";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
+import ProtectedPlaygroundRoute from "./protectedRoutes/ProtectedPlaygroundRoute";
 
 const App = () => {
   return (
@@ -13,7 +14,14 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/playground" element={<Playground />} />
+        <Route
+          path="/playground"
+          element={
+            <ProtectedPlaygroundRoute>
+              <Playground />
+            </ProtectedPlaygroundRoute>
+          }
+        />
         <Route path="/login" element={<LoginPage />} />
       </Routes>
       <Footer />
